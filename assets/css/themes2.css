@@ -56,14 +56,14 @@ html {
 
 .zdjecia-strony img {
   width: 100%;
-  height: 350px;
+  height: 250px;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
 .zdjecia-strony span {
-  padding: 16px;
-  font-size: 20px;
+  padding: 25px;
+  font-size: 20x;
   font-weight: 600;
   text-align: center;
   background-color: #f8f8f8;
