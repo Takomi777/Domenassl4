@@ -42,7 +42,8 @@ html {
 }
 
 .zdjecia-strony {
-  width: 350px;
+  max-width: 350px;
+  width: 90vw;
   background-color: #ffffff;
   border-radius: 16px;
   overflow: hidden;
