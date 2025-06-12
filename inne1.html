@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inne</title>
+    <link rel="stylesheet" href="assets/css/themes3.css">
+</head>
+<body>
+           <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <img src="./assets/img/Beznazwy-1.svg" class="logo-bar" alt="" srcset="">
+
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="navbarContent">
+          <ul class="navbar-nav ml-auto pt-3 pt-lg-0">
+            <li class="nav-item active">
+              <a href="index.html" class="nav-link">Strona Główna</a>
+            </li>
+             <li class="nav-item">
+              <a href="index.html#about" class="nav-link">O nas</a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#uslugi" class="nav-link">Oferta</a>
+            </li>
+            <li class="nav-item">
+              <a href="biezacerealizacje.html" class="nav-link">Bieżące Realizacje</a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#footer" class="nav-link bigg">Kontakt</a>
+            </li>
+                    </li>
+          </ul>
+        </div>
+      </div> <!-- .container -->
+    </nav> <!-- .navbar -->
+  </header>
+  <script>
+  const header = document.getElementById("header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+</script>
+</body>
+</html>
+
+        </div>
+      </div> <!-- .container -->
+    </nav> <!-- .navbar -->
+  </header> 
+        </div>
+    </header>
+<!-- Preload Bootstrap for Faster Rendering -->
+  <link rel="preload" href="./assets/css/bootstrap.css" as="style">
+  <link rel="stylesheet" href="./assets/css/bootstrap.css">
+
+<div class="galeria">
+  <img src="" alt="Zdjęcie 1" onclick="pokazZdjecie(0)">
+  <img src="" alt="Zdjęcie 2" onclick="pokazZdjecie(1)">
+  <img src="" alt="Zdjęcie 3" onclick="pokazZdjecie(2)">
+  <img src="" alt="Zdjęcie 4" onclick="pokazZdjecie(3)">
+  <img src="" alt="Zdjęcie 5" onclick="pokazZdjecie(4)">
+  <img src="" alt="Zdjęcie 6" onclick="pokazZdjecie(5)">
+  <img src="" alt="Zdjęcie 7" onclick="pokazZdjecie(6)">
+  <img src="" alt="Zdjęcie 8" onclick="pokazZdjecie(7)">
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="ukryjZdjecie()">
+  <span class="strzalka lewa" onclick="prevZdjecie(event)">&#10094;</span>
+  <img id="lightbox-img" src="" alt="duże zdjęcie">
+  <span class="strzalka prawa" onclick="nextZdjecie(event)">&#10095;</span>
+</div>
+
+<script>
+  const zdjecia = [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+  ];
+  let aktualnyIndex = 0;
+
+  function pokazZdjecie(index) {
+    aktualnyIndex = index;
+    const lightbox = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+    img.src = zdjecia[index];
+    lightbox.style.display = "flex";
+  }
+
+  function ukryjZdjecie() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+
+  function prevZdjecie(e) {
+    e.stopPropagation();
+    aktualnyIndex = (aktualnyIndex - 1 + zdjecia.length) % zdjecia.length;
+    document.getElementById("lightbox-img").src = zdjecia[aktualnyIndex];
+  }
+
+  function nextZdjecie(e) {
+    e.stopPropagation();
+    aktualnyIndex = (aktualnyIndex + 1) % zdjecia.length;
+    document.getElementById("lightbox-img").src = zdjecia[aktualnyIndex];
+  }
+  
+</script>
