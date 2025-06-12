@@ -40,6 +40,17 @@ html {
   padding: 40px 0;
   background-color: #2c3049;
 }
+@media (max-width: 768px) {
+  .zdjecia-strony {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .zdjecia-strony {
+    max-width: 250px;
+  }
+}
 
 .zdjecia-strony {
   max-width: 350px;
